@@ -40,6 +40,10 @@ class AmendFields {
    */
   private function set_taxonomy_screens( $taxonomies ) {
 
+      if (!$taxonomies) {
+          return;
+      }
+
     // Process the array of taxonomy slugs to get an array of screen IDs
     $this->taxonomy_screens = array_map( function( $value ) {
 

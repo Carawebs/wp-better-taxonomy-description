@@ -43,7 +43,7 @@ class Controller {
   public function __construct( Config $config, Settings $settings, TaxonomyDescription $description, AmendFields $amend_fields ) {
 
     $this->config         = $config;
-    $this->taxonomies     = $config['taxonomy'];
+    $this->taxonomies     = $config['taxonomy'] ?? [];
     $this->settings_page  = $settings;
     $this->description    = $description;
     $this->amend_fields   = $amend_fields;
