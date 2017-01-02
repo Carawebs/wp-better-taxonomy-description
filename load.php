@@ -15,10 +15,10 @@ add_action( 'plugins_loaded', function() {
     autoload();
 
     // Kick off WP CLI if using
-    if( defined( 'WP_CLI' ) && WP_CLI ) {
-      require_once( dirname( __FILE__ ) . '/WPCLI/Convert.php' );
-      return;
-    }
+    // if( defined( 'WP_CLI' ) && WP_CLI ) {
+      //require_once( dirname( __FILE__ ) . '/WPCLI/Convert.php' );
+      //return;
+    // }
 
     $config         = new Config();
     $settings_page  = new Settings( $config );

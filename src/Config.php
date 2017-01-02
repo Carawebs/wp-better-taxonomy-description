@@ -1,71 +1,71 @@
 <?php
 /**
- * @author  David Egan <david@carawebs.com>
- * @license https://opensource.org/licenses/gpl-2.0.php
- */
+* @author  David Egan <david@carawebs.com>
+* @license https://opensource.org/licenses/gpl-2.0.php
+*/
 namespace Carawebs\BetterTaxonomy;
 
 /**
- * Output a data object that holds all plugin options
- */
+* Output a data object that holds all plugin options
+*/
 class Config implements \ArrayAccess {
 
     const OPTION = CARAWEBS_BETTER_TAX_OPTION;
     const CAP    = 'manage_options';
 
     /**
-     * @var \ArrayObject
-     */
+    * @var \ArrayObject
+    */
     public $container;
 
     /**
-     * @param array $liveConfig
-     * @param array $defaults
-     */
+    * @param array $liveConfig
+    * @param array $defaults
+    */
     public function __construct( array $liveConfig = [], array $defaults = [] ) {
 
-      $this->container = get_option( self::OPTION ) ?: [];   // Fetch option from the DB
+        $this->container = get_option( self::OPTION ) ?: [];   // Fetch option from the DB
 
     }
 
     /**
-     * @inheritdoc
-     */
+    * @inheritdoc
+    */
     public function offsetExists($offset) {
 
-      return isset($this->container[$offset]) ? $this->container[$offset] : NULL;
+        return isset($this->container[$offset]) ? $this->container[$offset] : NULL;
 
     }
 
     /**
-     * @inheritdoc
-     */
+    * @inheritdoc
+    */
     public function offsetGet($offset) {
 
-      return isset($this->container[$offset]) ? $this->container[$offset] : null;
+        return isset($this->container[$offset]) ? $this->container[$offset] : null;
 
     }
 
     /**
-     * @inheritdoc
-     */
+    * @inheritdoc
+    */
     public function offsetSet($offset, $value) {
 
-      if (is_null($offset)) {
+        if (is_null($offset)) {
 
-        $this->container[] = $value;
+            $this->container[] = $value;
 
-      } else {
+        } else {
 
-        $this->container[$offset] = $value;
+            $this->container[$offset] = $value;
 
-      }
+        }
 
     }
 
     /**
-     * @inheritdoc
-     */
+    * @inheritdoc
+    */
     public function offsetUnset($offset) {
 
         unset($this->container[$offset]);
