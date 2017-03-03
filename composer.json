@@ -1,5 +1,5 @@
 {
-    "name": "carawebs/better-taxonomy-description",
+    "name": "carawebs/wp-better-taxonomy-description",
     "description": "WordPress plugin for better taxonomy description.",
     "keywords": [
         "wordpress"
@@ -14,8 +14,8 @@
         }
     ],
     "support": {
-        "issues": "https://github.com/Carawebs/better-taxonomy-description/issues",
-        "source": "https://github.com/Carawebs/better-taxonomy-description"
+        "issues": "https://github.com/Carawebs/wp-better-taxonomy-description/issues",
+        "source": "https://github.com/Carawebs/wp-better-taxonomy-description"
     },
     "license": "MIT",
     "require": {
